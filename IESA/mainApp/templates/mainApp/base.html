@@ -1,5 +1,3 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,12 +7,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.0/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
     {% block links %}
-
     {% endblock %}
     <style>
       body {
-        background-color: #121212; /* black background */
-        color: #ffffff; /* white text */
+        background-color: #ffffff; /* white background */
+        color: #000000; /* black text */
         font-family: 'Roboto', sans-serif; /* Google Font Roboto */
         display: flex;
         flex-direction: column;
@@ -23,8 +20,8 @@
       }
       
       header {
-        background-color: #000; /* black header */
-        box-shadow: 0 4px 2px -2px #1b1b1b; /* dark background shadow */
+        background-color: #f8f9fa; /* light gray header */
+        box-shadow: 0 4px 2px -2px #c8ced3; /* light gray background shadow */
         transition: background-color 0.5s ease-in-out; /* smooth color transition */
       }
       
@@ -38,7 +35,7 @@
       }
       
       .navbar-toggler-icon {
-        background-color: #fff;
+        background-color: #000;
       }
       
       main {
@@ -47,8 +44,8 @@
       }
       
       footer {
-        background-color: #1b1b1b; /* dark footer */
-        color: #fff;
+        background-color: #c8ced3; /* light gray footer */
+        color: #000000;
         padding: 20px;
         text-align: center;
         font-size: 14px;
@@ -63,17 +60,16 @@
       }
       
       .btn-outline-light {
-        color: #fff; /* white text */
-        border-color: #fff;
+        color: #000000; /* black text */
+        border-color: #000000;
         font-size: 20px; /* increase font size */
         padding: 5px 10px; /* increase padding */
       }
       
       .container {
-        background-color: #1b1b1b; /* dark container background */
         padding: 20px;
         border-radius: 5px;
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* white shadow */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* gray shadow */
       }
       
       /* Center the navigation and increase font size */
@@ -103,10 +99,11 @@
       .footer-icon {
         font-size: 36px;
         margin-right: 10px;
-
       }
+      
       .dropdown-item:hover {
-        background-color: #343a40; /* Измените цвет фона при ховере на пункте меню */
+        background-color: #dc3545; /* red on hover */
+        color: #ffffff; /* white text on hover */
       }
 
       #header_button_right {
@@ -115,94 +112,99 @@
       #header_cart {
         margin-left: 2%;
       }
+      
+
       {% block styles %}
       {% endblock styles %}
     </style>
     <title>Document</title>
   </head>
-  <body class="bg-black">
-    <div class="container-fluid p-0 ">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid ">
-            <a class="navbar-brand fs-1 text fs-2 " href="#">IESA</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+  <body class="mainapp-body">
+    <div class="container-fluid p-0 bg-white">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light mainapp-header">
+        <div class="container-fluid">
+          <a class="navbar-brand fs-1 text fs-2 mainapp-navbar-brand-img" href="#">IESA</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon mainapp-navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse mainapp-nav" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 link-offset-2-hover">
               <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contacts</a>
+                <a class="nav-link" href="{% url "home_page" %}">Home</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle navbar-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Les Cours</a>
-                <ul class="dropdown-menu bg-dark">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Courses</a>
+                <ul class="dropdown-menu">
                   <li>
-                    <a class="dropdown-item text-light" href="#">Cours Kids 4-6 ans</a>
+                    <a class="dropdown-item text-dark" href="#">Boxing course</a>
                   </li>
                   <li>
-                    <a class="dropdown-item text-light" href="#">Cours enfants 7-15 ans</a>
+                    <a class="dropdown-item text-dark" href="#">Chess course</a>
                   </li>
                   <li>
-                    <a class="dropdown-item text-light" href="#">Cours en groupe abuletes</a>
+                    <a class="dropdown-item text-dark" href="#">Robotics course</a>
                   </li>
                   <li>
-                    <a class="dropdown-item text-light" href="#">Cours semi-privé</a>
+                    <a class="dropdown-item text-dark" href="#">Diving course</a>
                   </li>
                   <li>
-                    <hr class="dropdown-divider"/>
+                    <hr class="dropdown-divider" />
                   </li>
                   <li>
-                    <a class="dropdown-item text-light" href="#">Autre</a>
+                    <a class="dropdown-item text-dark" href="#">Autre</a>
                   </li>
                 </ul>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Stages</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Stages</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">About Sports</a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item text-dark" href="#">Box</a>
                   </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle navbar-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">About Sports</a>
-                    <ul class="dropdown-menu bg-dark">
-                      <li>
-                        <a class="dropdown-item text-light" href="#">Box</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item text-light" href="#">Karate</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item text-light" href="#">Chess</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item text-light" href="#">Cours semi-privé</a>
-                      </li>
-                      <li>
-                        <hr class="dropdown-divider"/>
-                      </li>
-                      <li>
-                        <a class="dropdown-item text-light" href="#">Autre</a>
-                      </li>
-                    </ul>
+                  <li>
+                    <a class="dropdown-item text-dark" href="#">Karate</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-dark" href="#">Chess</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-dark" href="#">Cours semi-privé</a>
+                  </li>
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-dark" href="#">The rest</a>
+                  </li>
+                </ul>
+              </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">About Us</a>
               </li>
-              </li>
             </ul>
             <form class="d-flex mr-auto" role="search">
-              <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск" />
-              <button class="btn btn-outline-success" type="submit">Поиск</button>
+              <input class="form-control me-2 focus-ring-danger" type="search" placeholder="Search" aria-label="Search" />
+              <button class="btn btn-outline-primary" type="submit">Search</button>
             </form>
-
-            <div class="btn-group ml-3" id="header_button_right" role="group" aria-label="Группа кнопок с вложенным раскрывающимся списком">
+    
+            <div class="btn-group ml-3" id="header_button_right" role="group" aria-label="Button group with nested dropdown">
               <div class="btn-group" role="group" aria-label="Basic outlined example">
                 <button type="button" class="btn btn-outline-primary">Sign In</button>
-                <button type="button" class="btn btn-outline-primary">Sign Up</button>
+                <button type="button" class="btn btn-outline-danger">Sign Up</button>
               </div>
             </div>
-            <button type="button" class="btn btn-outline-dark " id="header_cart">
-                    
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" color='white' class="bi bi-cart2" viewBox="0 0 16 16">
-                    <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
-                </svg>
-                <span class="badge text-bg-secondary">0</span>
+            <button type="button" class="btn btn-outline-secondary" id="header_cart">
+    
+              <svg class="text-black-50" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" color='white'
+                class="bi bi-cart2 text-info" viewBox="0 0 16 16">
+                <path
+                  d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+              </svg>
+              <span class="badge text-info">0</span>
             </button>
           </div>
         </div>
@@ -216,7 +218,9 @@
         </div>
       </main>
     </div>
-    <footer class="pt-4 my-4">
+
+    
+    <footer class="pt-4">
       <div class="container">
         <div class="row">
           <div class="col-md-4 footer-block">
@@ -240,7 +244,6 @@
     </footer>
 
     {% block js %}
-
     {% endblock %}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     
