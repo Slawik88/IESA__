@@ -1,166 +1,212 @@
 {% extends 'mainApp\base.html' %}
+{% load i18n %}
 
 {% block contents %}
-  {% block links %}
-    <!-- Bootstrap 5 и Font Awesome -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    {% block links %}
+        <!-- Bootstrap 5 и Font Awesome -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  {% endblock %}
-  {% block styles %}
-    <style>
-      .line-height-2 {
-        line-height: 2;
-      }
+    {% endblock %}
+    {% block styles %}
+        <style>
+            .line-height-2 {
+                line-height: 2;
+            }
 
-    </style>
-  {% endblock %}
+            .swiper {
+                width: 100%; /* Растягиваем слайдер на всю ширину контейнера */
+                max-width: 1100px; /* Ограничиваем максимальную ширину слайдера */
+                height: 700px;
+                margin: 0 auto; /* Центрируем слайдер по горизонтали */
+            }
 
-  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-touch="true">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner" data-bs-interval="5000">
-      <div class="carousel-item active">
-        <img src="https://img2.akspic.ru/attachments/crops/5/9/0/6/3/136095/136095-nebo-sneg-snoubord-zima-figurnoe_katanie-1366x768.jpg" class="d-block w-100" alt="..." />
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Метка первого слайда</h5>
-          <p>Некоторый репрезентативный заполнитель для первого слайда.</p>
-        </div>
-      </div>
-      <div class="carousel-item" data-bs-interval="5000">
-        <img src="https://th.bing.com/th/id/R.b6667f09a42897ad125a2ed103f170be?rik=E76bohCIDQJkMg&pid=ImgRaw&r=0" class="d-block w-100" alt="..." />
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Метка второго слайда</h5>
-          <p>Некоторый репрезентативный заполнитель для второго слайда.</p>
-        </div>
-      </div>
-      <div class="carousel-item" data-bs-interval="5000">
-        <img src="https://rare-gallery.com/uploads/posts/877605-Chess-Wooden-Hands.jpg" class="d-block w-100" alt="..." />
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Метка третьего слайда</h5>
-          <p>Некоторый репрезентативный заполнитель для третьего слайда.</p>
-        </div>
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Предыдущий</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Следующий</span>
-    </button>
-  </div>
+            .swiper-slide img {
+                width: 100%; /* Растягиваем изображение на слайде на всю ширину слайдера */
+                height: 100%; /* Сохраняем пропорции изображения */
+                object-fit: cover; /* Заполняем всю площадь слайда, сохраняя пропорции */
+            }
 
-  <div class="container mt-5">
-    <h2 class="text-center mb-4 text-danger">About Us</h2>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-      <div class="col">
-        <div class="card h-100 ">
-          <img src="https://deih43ym53wif.cloudfront.net/ice-climbing-shutterstock_585400241.jpg_6f44d4b97d.jpg" class="card-img-top img-fluid" alt="Extreme Sports" />
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Extreme Sports</h5>
-            <p class="card-text mt-auto">Интенсивные и захватывающие виды спорта — наша страсть. Присоединяйтесь к нам для новых впечатлений и эмоций. Мы стремимся создать атмосферу, где каждый человек может раскрыть свой потенциал и преодолеть границы своих возможностей.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100 ">
-          <img src="https://patch.com/img/cdn20/users/22908971/20180330/011059/styles/raw/public/processed_images/shutterstock_523820524-1522429848-9977.jpg" class="card-img-top img-fluid" alt="Chess Courses" />
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Chess Courses</h5>
-            <p class="card-text mt-auto">Погружайтесь в мир стратегии и ума с нашими курсами по шахматам. У нас вы найдете индивидуальные подходы, способствующие развитию вашего мышления и улучшению аналитических навыков.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <img src="https://brookwood.edu/wp-content/uploads/2019/06/hands-in-circle.jpg" class="card-img-top img-fluid" alt="Innovative Workshops" />
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Inclusive Community</h5>
-            <p class="card-text mt-auto">Присоединяйтесь к нашей дружной команде, где ценят каждого, независимо от национальности, возраста или опыта. Мы гордимся тем, что создали открытое и уважительное сообщество, где каждый может находить поддержку и вдохновение.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+            /* Дополнительные стили для навигации и пагинации */
+            .swiper-pagination {
 
-  <div class="container mt-5 border-start border-light-subtle border-top">
-    <div style="background-color: #1B1B1B;" class="jumbotron text-center text-white p-4 rounded">
-      <h1 class="display-3 text-danger">Art Martial et Self Défense</h1>
-      <p class="lead">“Connaître les autres relève de l’intelligence, se connaître soi-même est la vraie sagesse. Dominer les autres relève de la force, se maîtriser soi-même est le vrai pouvoir”</p>
+            }
+
+            .swiper-button-prev,
+            .swiper-button-next {
+                color: red; /* Задаем красный цвет стрелок */
+            }
+        </style>
+    {% endblock %}
+
+    <!-- Slider main container -->
+    <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            {% for swiper_image in swiper_images %}
+                <div class="swiper-slide"><img src="{{ swiper_image.image.url }}" alt=""></div>
+            {% endfor %}
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
     </div>
 
-    <div class="row mt-4">
-      <div class="col-md-6">
-        <p class="font-italic text-black">L’école de Ju-Kenpo Karaté Jitsu propose des cours pour les adultes et les enfants dès 5 ans. Nous enseignons le Ju-kenpo Karaté Jitsu, ainsi que le Kajukenbo à tous ceux qui souhaitent partager ces moments d’apprentissage, d’échange et de découverte de soi-même.</p>
-        <p class="text-black">
-          <i class="bi bi-check-circle text-black"></i> A travers notre art martial, vous trouverez un enseignement basé sur le développement personnel, physique, et le respect.
-        </p>
-        <p class="text-black">
-          <i class="bi bi-check-circle"></i> Pour les plus jeunes, les cours de Ju-Kenpo Karaté Jitsu permettront de mieux appréhender leur environnement ainsi que d’améliorer leur coordination par des techniques simples.
-        </p>
-        <p class="text-black">
-          <i class="bi bi-check-circle"></i> Pour les pratiquants plus expérimentés, des techniques avancées et plus complexes seront enseignées dans la voie d’un accomplissement personnel et martial.
-        </p>
-      </div>
-
-      <div class="col-md-6 text-center">
-        <img src="static\mainApp\logo.png" alt="Art Martial et Self Défense" class="img-fluid mb-4 rounded" style="max-width: 70%; max-height: 400px;" />
-      </div>
-    </div>
-  </div>
-
-
-  <div class="container border-bottom border-right">
-    <!-- Блок с карточками -->
-    <div class="row row-cols-4 g-4">
-      <div class="col">
-        <div class="card h-100 text-light border-light shadow" style="width: 240px; transition: transform 0.2s;">
-          <img src="https://images.wallpaperscraft.ru/image/single/ozero_les_sneg_130421_1920x1080.jpg" class="card-img-top" alt="..." style="max-height: 200px; object-fit: cover;" />
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title text-black fw-bold fs-5 mb-3">Card Title 2 Card Title 2 Card Title 2</h5>
-            <!-- Цена внизу блока .card-body -->
-            <div class="mt-auto text-black  fs-6 mb-3">Price: $24.99</div>
-
-            <!-- Кнопки "Buy" и "Details" -->
-            <div class="d-flex justify-content-between">
-              <button type="button" class="btn btn-outline-primary flex-grow-1 me-2">Add to cart</button>
-              <button type="button" class="btn btn-outline-danger flex-grow-1">Details</button>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4 text-danger">{% translate "About Us" %}</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card h-100 ">
+                    <img src="https://deih43ym53wif.cloudfront.net/ice-climbing-shutterstock_585400241.jpg_6f44d4b97d.jpg"
+                         class="card-img-top img-fluid" alt="Extreme Sports"/>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">{% translate "Extreme Sports" %}</h5>
+                        <p class="card-text mt-auto">{% translate "Intense and exciting sports are our passion. Join us for new experiences and emotions. We strive to create an atmosphere where every person can reach their potential and overcome their limits." %}</p>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="card-footer bg-transparent border-top-0">
-            <small class="text-success">In stock</small>
-          </div>
+            <div class="col">
+                <div class="card h-100 ">
+                    <img src="https://patch.com/img/cdn20/users/22908971/20180330/011059/styles/raw/public/processed_images/shutterstock_523820524-1522429848-9977.jpg"
+                         class="card-img-top img-fluid" alt="Chess Courses"/>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">{% translate "Chess Courses" %}</h5>
+                        <p class="card-text mt-auto">{% translate "Dive into the world of strategy and intelligence with our chess courses. Here you will find individual approaches that will help develop your thinking and improve your analytical skills." %}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://brookwood.edu/wp-content/uploads/2019/06/hands-in-circle.jpg"
+                         class="card-img-top img-fluid" alt="Innovative Workshops"/>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">{% translate "Friendly Community" %}</h5>
+                        <p class="card-text mt-auto">{% translate "Join our friendly team, where everyone is valued, regardless of nationality, age or experience. We are proud to have created an open and respectful community where everyone can find support and inspiration." %}</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <!-- Добавьте еще карточек по аналогии -->
     </div>
-  </div>
 
-  {% block js %}
-    <!-- Добавим ссылку на Inputmask.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
-    <!-- Для использования Bootstrap и jQuery -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <div class="container mt-5 border-start border-light-subtle border-top">
+        <div style="background-color: #1B1B1B;" class="jumbotron text-center text-white p-4 rounded">
+            <h1 class="display-3 text-danger">{% translate "Art Martial et Self Défense" %}</h1>
+            <p class="lead">{% translate "“Connaître les autres relève de l’intelligence, se connaître soi-même est la vraie sagesse. Dominer les autres relève de la force, se maîtriser soi-même est le vrai pouvoir”" %}</p>
+        </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/imask/6.0.7/imask.min.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        var phoneMask = IMask(document.getElementById('floatingInputPhone'), {
-          mask: '+{38}(000)000-00-00'
-        })
-      })
-    </script>
-  {% endblock %}
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <p class="font-italic text-black">{% translate "L’école de Ju-Kenpo Karaté Jitsu propose des cours pour les adultes et les enfants dès 5 ans. Nous enseignons le Ju-kenpo Karaté Jitsu, ainsi que le Kajukenbo à tous ceux qui souhaitent partager ces moments d’apprentissage, d’échange et de découverte de soi-même." %}</p>
+                <p class="text-black">
+                    <i class="bi bi-check-circle text-black"></i> {% translate "A travers notre art martial, vous trouverez un enseignement basé sur le développement personnel, physique, et le respect." %}
+                </p>
+                <p class="text-black">
+                    <i class="bi bi-check-circle"></i> {% translate "Pour les plus jeunes, les cours de Ju-Kenpo Karaté Jitsu permettront de mieux appréhender leur environnement ainsi que d’améliorer leur coordination par des techniques simples." %}
+                </p>
+                <p class="text-black">
+                    <i class="bi bi-check-circle"></i> {% translate "Pour les pratiquants plus expérimentés, des techniques avancées et plus complexes seront enseignées dans la voie d’un accomplissement personnel et martial." %}
+                </p>
+            </div>
+
+            <div class="col-md-6 text-center">
+                <img src="\static\mainApp\logo.png" alt="Art Martial et Self Défense" class="img-fluid mb-4 rounded"
+                     style="max-width: 70%; max-height: 400px;"/>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container border-bottom border-right">
+        <!-- Блок с карточками -->
+        <div class="row row-cols-4 g-4">
+            <div class="col">
+                <div class="card h-100 text-light border-light shadow"
+                     style="width: 240px; transition: transform 0.2s;">
+                    <img src="https://images.wallpaperscraft.ru/image/single/ozero_les_sneg_130421_1920x1080.jpg"
+                         class="card-img-top" alt="..." style="max-height: 200px; object-fit: cover;"/>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-black fw-bold fs-5 mb-3">{% translate "Card Title 2 Card Title 2 Card Title 2" %}</h5>
+                        <!-- Цена внизу блока .card-body -->
+                        <div class="mt-auto text-black  fs-6 mb-3">{% translate "Price" %}: $24.99</div>
+
+                        <!-- Кнопки "Buy" и "Details" -->
+                        <div class="d-flex justify-content-between">
+                            <button type="button"
+                                    class="btn btn-outline-primary flex-grow-1 me-2">{% translate "Add to cart" %}</button>
+                            <button type="button"
+                                    class="btn btn-outline-danger flex-grow-1">{% translate "Details" %}</button>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                        <small class="text-success">{% translate "In stock" %}</small>
+                    </div>
+                </div>
+            </div>
+            <!-- Добавьте еще карточек по аналогии -->
+        </div>
+    </div>
+
+    {% block js %}
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <!-- Добавим ссылку на Inputmask.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
+        <!-- Для использования Bootstrap и jQuery -->
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/imask/6.0.7/imask.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var phoneMask = IMask(document.getElementById('floatingInputPhone'), {
+                    mask: '+{38}(000)000-00-00'
+                })
+            })
+            document.addEventListener('DOMContentLoaded', function () {
+                const swiper = new Swiper('.swiper', {
+                    // Optional parameters
+                    loop: true,
+
+                    // If we need pagination
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true, // Позволяет кликать по пагинации для перехода к слайду
+                        dynamicBullets: true, // Изменение количества точек в пагинации в зависимости от количества слайдов
+                    },
+
+                    // Navigation arrows
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+
+                    // And if we need scrollbar
+                    scrollbar: {
+                        el: '.swiper-scrollbar',
+                    },
+                    autoplay: {
+                        delay: 5000, // Задержка между слайдами в миллисекундах
+                        disableOnInteraction: false, // Отключение автопрокрутки при взаимодействии пользователя с слайдером
+                    },
+                    effect: 'slide', // Другие варианты: 'slide', 'cube', 'coverflow', 'flip, 'fade'
+                    centeredSlides: true,
+
+                });
+            });
+        </script>
+    {% endblock %}
 {% endblock %}

@@ -1,0 +1,205 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-09 16:17+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: .\templates\mainApp\base.html:138
+msgid "Home"
+msgstr ""
+
+#: .\templates\mainApp\base.html:142
+msgid "Courses"
+msgstr ""
+
+#: .\templates\mainApp\base.html:145
+msgid "Boxing course"
+msgstr ""
+
+#: .\templates\mainApp\base.html:148
+msgid "Chess course"
+msgstr ""
+
+#: .\templates\mainApp\base.html:151
+msgid "Robotics course"
+msgstr ""
+
+#: .\templates\mainApp\base.html:154
+msgid "Diving course"
+msgstr ""
+
+#: .\templates\mainApp\base.html:161
+msgid "Stages"
+msgstr ""
+
+#: .\templates\mainApp\base.html:168
+msgid "Box"
+msgstr ""
+
+#: .\templates\mainApp\base.html:171
+msgid "Karate"
+msgstr ""
+
+#: .\templates\mainApp\base.html:174
+msgid "Chess"
+msgstr ""
+
+#: .\templates\mainApp\base.html:179 .\templates\mainApp\index.html:63
+msgid "About Us"
+msgstr ""
+
+#: .\templates\mainApp\base.html:185
+msgid "Search"
+msgstr ""
+
+#: .\templates\mainApp\base.html:218
+msgid "Sign In"
+msgstr ""
+
+#: .\templates\mainApp\base.html:219
+msgid "Sign Up"
+msgstr ""
+
+#: .\templates\mainApp\base.html:249
+msgid "Company Info"
+msgstr ""
+
+#: .\templates\mainApp\base.html:254
+msgid "Contact Us"
+msgstr ""
+
+#: .\templates\mainApp\base.html:255
+msgid "Email"
+msgstr ""
+
+#: .\templates\mainApp\base.html:256
+msgid "Phone"
+msgstr ""
+
+#: .\templates\mainApp\base.html:265
+msgid "2023 Your Website. All Rights Reserved."
+msgstr ""
+
+#: .\templates\mainApp\index.html:33 .\templates\mainApp\index.html:47
+msgid "First slide label"
+msgstr ""
+
+#: .\templates\mainApp\index.html:34 .\templates\mainApp\index.html:41
+#: .\templates\mainApp\index.html:48
+msgid "Some representative placeholder for the first slide."
+msgstr ""
+
+#: .\templates\mainApp\index.html:54
+msgid "Previous"
+msgstr ""
+
+#: .\templates\mainApp\index.html:58
+msgid "Next"
+msgstr ""
+
+#: .\templates\mainApp\index.html:69
+msgid "Extreme Sports"
+msgstr ""
+
+#: .\templates\mainApp\index.html:70
+msgid ""
+"Intense and exciting sports are our passion. Join us for new experiences and "
+"emotions. We strive to create an atmosphere where every person can reach "
+"their potential and overcome their limits."
+msgstr ""
+
+#: .\templates\mainApp\index.html:78
+msgid "Chess Courses"
+msgstr ""
+
+#: .\templates\mainApp\index.html:79
+msgid ""
+"Dive into the world of strategy and intelligence with our chess courses. "
+"Here you will find individual approaches that will help develop your "
+"thinking and improve your analytical skills."
+msgstr ""
+
+#: .\templates\mainApp\index.html:87
+msgid "Inclusive Community"
+msgstr ""
+
+#: .\templates\mainApp\index.html:88
+msgid ""
+"Join our friendly team, where everyone is valued, regardless of nationality, "
+"age or experience. We are proud to have created an open and respectful "
+"community where everyone can find support and inspiration."
+msgstr ""
+
+#: .\templates\mainApp\index.html:97
+msgid "Art Martial et Self Défense"
+msgstr ""
+
+#: .\templates\mainApp\index.html:98
+msgid ""
+"“Connaître les autres relève de l’intelligence, se connaître soi-même est la "
+"vraie sagesse. Dominer les autres relève de la force, se maîtriser soi-même "
+"est le vrai pouvoir”"
+msgstr ""
+
+#: .\templates\mainApp\index.html:103
+msgid ""
+"L’école de Ju-Kenpo Karaté Jitsu propose des cours pour les adultes et les "
+"enfants dès 5 ans. Nous enseignons le Ju-kenpo Karaté Jitsu, ainsi que le "
+"Kajukenbo à tous ceux qui souhaitent partager ces moments d’apprentissage, "
+"d’échange et de découverte de soi-même."
+msgstr ""
+
+#: .\templates\mainApp\index.html:105
+msgid ""
+"A travers notre art martial, vous trouverez un enseignement basé sur le "
+"développement personnel, physique, et le respect."
+msgstr ""
+
+#: .\templates\mainApp\index.html:108
+msgid ""
+"Pour les plus jeunes, les cours de Ju-Kenpo Karaté Jitsu permettront de "
+"mieux appréhender leur environnement ainsi que d’améliorer leur coordination "
+"par des techniques simples."
+msgstr ""
+
+#: .\templates\mainApp\index.html:111
+msgid ""
+"Pour les pratiquants plus expérimentés, des techniques avancées et plus "
+"complexes seront enseignées dans la voie d’un accomplissement personnel et "
+"martial."
+msgstr ""
+
+#: .\templates\mainApp\index.html:129
+msgid "Card Title 2 Card Title 2 Card Title 2"
+msgstr ""
+
+#: .\templates\mainApp\index.html:131
+msgid "Price"
+msgstr ""
+
+#: .\templates\mainApp\index.html:135
+msgid "Add to cart"
+msgstr ""
+
+#: .\templates\mainApp\index.html:136
+msgid "Details"
+msgstr ""
+
+#: .\templates\mainApp\index.html:140
+msgid "In stock"
+msgstr ""
