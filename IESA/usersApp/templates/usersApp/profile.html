@@ -1,2 +1,58 @@
 {% extends 'mainapp/base.html' %}
 
+{% block contents %}
+<div class="container mt-5">
+    <h2 class="mb-4">Profile</h2>
+    {% if user.is_authenticated %}
+        {% if update_success %}
+            <div class="alert alert-success">
+                Profile updated successfully.
+            </div>
+        {% endif %}
+        <div class="profile-info-container" style="max-width: 600px;">
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between">
+                    <strong class="text-primary">Username:</strong>
+                    <span class="text-muted ml-2">{{ user.username }}</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                    <strong class="text-primary">Email:</strong>
+                    <span class="text-muted ml-2">{{ user.email }}</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                    <strong class="text-primary">First Name:</strong>
+                    <span class="text-muted ml-2">{{ user.first_name }}</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                    <strong class="text-primary">Last Name:</strong>
+                    <span class="text-muted ml-2">{{ user.last_name }}</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                    <strong class="text-primary">Phone Number:</strong>
+                    <span class="text-muted ml-2">{{ user.phone_number }}</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                    <strong class="text-primary">Postal Code:</strong>
+                    <span class="text-muted ml-2">{{ user.postal_code }}</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                    <strong class="text-primary">Active:</strong>
+                    <span class="text-muted ml-2">{{ user.is_active }}</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                    <strong class="text-primary">Staff:</strong>
+                    <span class="text-muted ml-2">{{ user.is_staff }}</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                    <strong class="text-primary">Date Joined:</strong>
+                    <span class="text-muted ml-2">{{ user.date_joined }}</span>
+                </li>
+                {# Add other profile fields if available #}
+            </ul>
+            <a href="{% url 'edit_profile' %}" class="btn btn-primary mt-3">Edit Profile</a>
+        </div>
+    {% else %}
+        <p class="mt-3">Please log in to view your profile.</p>
+    {% endif %}
+</div>
+{% endblock %}
