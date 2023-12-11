@@ -20,28 +20,23 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 from mainApp.views import home_page_view
-<<<<<<< HEAD
 
-=======
->>>>>>> 51bee0cf41382f408dd2e93e054c6c3acdb3edb9
+
+
 urlpatterns = [
-    path('', home_page_view, name='home_page'),
+    path('', home_page_view, name='home'),
     path('user/', include('usersApp.urls')),
     path('admin/', admin.site.urls),
     path("i18n/", include("django.conf.urls.i18n")),
-<<<<<<< HEAD
 
-=======
->>>>>>> 51bee0cf41382f408dd2e93e054c6c3acdb3edb9
+
+
 ] + i18n_patterns(
     path('i18n/', include('django.conf.urls.i18n')),
 )
 urlpatterns += i18n_patterns(
     path('', home_page_view, name='home_page'),
-<<<<<<< HEAD
 
-=======
->>>>>>> 51bee0cf41382f408dd2e93e054c6c3acdb3edb9
 )
 # Only during development
 if settings.DEBUG:

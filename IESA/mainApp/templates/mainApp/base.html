@@ -11,6 +11,8 @@
     {% block links %}
     {% endblock %}
     <style>
+
+
         body {
             background-color: #ffffff; /* white background */
             color: #000000; /* black text */
@@ -27,18 +29,6 @@
             transition: background-color 0.5s ease-in-out; /* smooth color transition */
         }
 
-        .navbar-brand-img {
-            max-height: 70px; /* increase max height for larger logo */
-            margin-right: 0; /* remove default right margin */
-        }
-
-        nav {
-            background-color: transparent; /* transparent navbar */
-        }
-
-        .navbar-toggler-icon {
-            background-color: #000;
-        }
 
         main {
             padding: 20px;
@@ -46,27 +36,13 @@
         }
 
         footer {
-            background-color: #c8ced3; /* light gray footer */
+
             color: #000000;
             padding: 20px;
             text-align: center;
             font-size: 14px;
         }
 
-        /* Additional styles for buttons and main content */
-        .btn-primary {
-            background-color: #dc3545;
-            border-color: #dc3545;
-            font-size: 18px;
-            padding: 10px 20px;
-        }
-
-        .btn-outline-light {
-            color: #000000; /* black text */
-            border-color: #000000;
-            font-size: 20px; /* increase font size */
-            padding: 5px 10px; /* increase padding */
-        }
 
         .container {
             padding: 20px;
@@ -79,15 +55,6 @@
             margin: auto;
         }
 
-        .nav-link {
-            font-size: 23px;
-        }
-
-        /* Style for the cart icon */
-        .cart-icon {
-            font-size: 24px;
-            margin-right: 5px;
-        }
 
         /* Styling for the enhanced footer */
         .footer-block {
@@ -103,10 +70,6 @@
             margin-right: 10px;
         }
 
-        .dropdown-item:hover {
-            background-color: #dc3545; /* red on hover */
-            color: #ffffff; /* white text on hover */
-        }
 
         #header_button_right {
             padding-left: 2%;
@@ -116,15 +79,14 @@
             margin-left: 2%;
         }
 
-
         {% block styles %}
         {% endblock styles %}
     </style>
     <title>Document</title>
 </head>
-<body class="mainapp-body">
-<div class="container-fluid p-0 bg-white">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light mainapp-header">
+<body class="mainapp-body ">
+<div class="container-fluid p-0 bg-white  ">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mainapp-header ">
         <div class="container-fluid">
             <a class="navbar-brand fs-1 text fs-2 mainapp-navbar-brand-img" href="#">IESA</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -142,69 +104,6 @@
                            aria-expanded="false">{% translate "Courses" %}</a>
                         <ul class="dropdown-menu">
                             <li>
-<<<<<<< HEAD
-                                <a class="dropdown-item text-dark" href="#">{% translate "Boxing course" %}</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item text-dark" href="#">{% translate "Chess course" %}</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item text-dark" href="#">{% translate "Robotics course" %}</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item text-dark" href="#">{% translate "Diving course" %}</a>
-                            </li>
-
-
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">{% translate "Stages" %}</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                           aria-expanded="false">About Sports</a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a class="dropdown-item text-dark" href="#">{% translate "Box" %}</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item text-dark" href="#">{% translate "Karate" %}</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item text-dark" href="#">{% translate "Chess" %}</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">{% translate "About Us" %}</a>
-                    </li>
-                </ul>
-                <form class="d-flex mr-auto" role="search">
-                    <input class="form-control me-2 focus-ring-danger" type="search" placeholder="Search"
-                           aria-label="Search"/>
-                    <button class="btn btn-outline-primary" type="submit">{% translate "Search" %}</button>
-                </form>
-
-
-                <form id="languageForm" action="{% url 'set_language' %}" method="post" class="navbar-form">
-                    {% csrf_token %}
-                    <div class="input-group">
-                        <input name="next" type="hidden" value="{{ redirect_to }}">
-                        <select name="language" class="form-select" onchange="changeLanguage(this)">
-                            {% get_current_language as LANGUAGE_CODE %}
-                            {% get_available_languages as LANGUAGES %}
-                            {% get_language_info_list for LANGUAGES as languages %}
-                            {% for language in languages %}
-                                <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %}
-                                        selected {% endif %}>
-                                    {{ language.name_local }} ({{ language.code }})
-                                </option>
-                            {% endfor %}
-                        </select>
-
-                    </div>
-=======
                                 <a class="dropdown-item text-dark" href="#">Boxing course</a>
                             </li>
                             <li>
@@ -255,16 +154,16 @@
                         <a class="nav-link" href="#">{% translate "About Us" %}</a>
                     </li>
                 </ul>
-                <form class="d-flex mr-auto" role="search">
+                <form class="d-flex mr-5" role="search">
                     <input class="form-control me-2 focus-ring-danger" type="search" placeholder="Search"
                            aria-label="Search"/>
                     <button class="btn btn-outline-primary" type="submit">Search</button>
                 </form>
 
 
-                <form id="languageForm" action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                <form class="mr-5 ml-5" id="languageForm" action="{% url 'set_language' %}" method="post">{% csrf_token %}
                     <input name="next" type="hidden" value="{{ redirect_to }}">
-                    <select name="language" onchange="changeLanguage(this)">
+                    <select class="form-select" name="language" onchange="changeLanguage(this)">
                         {% get_current_language as LANGUAGE_CODE %}
                         {% get_available_languages as LANGUAGES %}
                         {% get_language_info_list for LANGUAGES as languages %}
@@ -275,7 +174,6 @@
                             </option>
                         {% endfor %}
                     </select>
->>>>>>> 51bee0cf41382f408dd2e93e054c6c3acdb3edb9
                 </form>
 
                 <script>
@@ -285,27 +183,36 @@
                 </script>
 
 
-                <div class="btn-group ml-3" id="header_button_right" role="group"
+    {% if user.is_authenticated %}
+        <div class="btn-group">
+            <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                {{ user.username }}
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action 1</a></li>
+                <li><a class="dropdown-item" href="#">Action 2</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="{% url 'logout' %}">Log Out</a></li>
+            </ul>
+        </div>
+    {% else %}
+<div class="btn-group ml-3" id="header_button_right" role="group"
                      aria-label="Button group with nested dropdown">
                     <div class="btn-group" role="group" aria-label="Basic outlined example">
-<<<<<<< HEAD
-                        <button type="button" class="btn btn-outline-primary">{% translate "Sign In" %}</button>
-                        <button type="button" class="btn btn-outline-danger">{% translate "Sign Up" %}</button>
-=======
-                        <button type="button" class="btn btn-outline-primary">Sign In</button>
-                        <button type="button" class="btn btn-outline-danger">Sign Up</button>
->>>>>>> 51bee0cf41382f408dd2e93e054c6c3acdb3edb9
+                        <button type="button" class="btn btn-outline-primary"
+                                onclick="window.location.href='{% url 'login' %}'">Sign In
+                        </button>
+                        <button type="button" class="btn btn-outline-danger"
+                                onclick="window.location.href='{% url 'register' %}'">Sign Up
+                        </button>
                     </div>
                 </div>
+    {% endif %}
                 <button type="button" class="btn btn-outline-secondary" id="header_cart">
 
-                    <svg class="text-black-50" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-<<<<<<< HEAD
-                         fill="currentColor" color='white' class="bi bi-cart2 text-info" viewBox="0 0 16 16">
-=======
+                    <svg class="text-black-50 " xmlns="http://www.w3.org/2000/svg" width="25" height="25"
                          fill="currentColor" color='white'
                          class="bi bi-cart2 text-info" viewBox="0 0 16 16">
->>>>>>> 51bee0cf41382f408dd2e93e054c6c3acdb3edb9
                         <path
                                 d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
                     </svg>
@@ -329,16 +236,6 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 footer-block">
-<<<<<<< HEAD
-                <h4>{% translate "Company Info" %}</h4>
-                <p>{% translate "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget risus nec ipsum imperdiet
-                    ullamcorper." %}</p>
-            </div>
-            <div class="col-md-4 footer-block">
-                <h4>{% translate "Contact Us" %}</h4>
-                <p>{% translate "Email" %}: info@example.com</p>
-                <p>{% translate "Phone" %}: +123 456 7890</p>
-=======
                 <h4>Company Info</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget risus nec ipsum imperdiet
                     ullamcorper.</p>
@@ -347,7 +244,6 @@
                 <h4>Contact Us</h4>
                 <p>Email: info@example.com</p>
                 <p>Phone: +123 456 7890</p>
->>>>>>> 51bee0cf41382f408dd2e93e054c6c3acdb3edb9
             </div>
             <div class="col-md-4 footer-block">
                 <h4>Follow Us</h4>
@@ -356,11 +252,7 @@
                 <a href="#" class="footer-icon"><i class="bi bi-instagram"></i></a>
             </div>
         </div>
-<<<<<<< HEAD
-        <p class="text-center">&copy; {% translate "2023 Your Website. All Rights Reserved." %}</p>
-=======
         <p class="text-center">&copy; 2023 Your Website. All Rights Reserved.</p>
->>>>>>> 51bee0cf41382f408dd2e93e054c6c3acdb3edb9
     </div>
 </footer>
 

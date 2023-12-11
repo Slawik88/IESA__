@@ -39,8 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bootstrap5',
 
-    'mainApp',
     'usersApp',
+    'mainApp',
+
 ]
 
 MIDDLEWARE = [
@@ -121,17 +122,14 @@ LANGUAGES = [
     ("ar", _("Arab")),
     ("fr", _("French")),
 ]
-<<<<<<< HEAD
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
 MODELTRANSLATION_PREPOPULATE_LANGUAGE = 'en'
 MODELTRANSLATION_AUTO_POPULATE = True
 
 
 
-=======
 # Язык по умолчанию
 LANGUAGE_CODE = 'en'
->>>>>>> 51bee0cf41382f408dd2e93e054c6c3acdb3edb9
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
@@ -150,7 +148,7 @@ STATIC_URL = '/static/'
 
 
 MEDIA_URL = '/media/'
-<<<<<<< HEAD
+
 MEDIA_ROOT = BASE_DIR / 'media'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -158,6 +156,4 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGOUT_REDIRECT_URL = 'home'
 
 AUTH_USER_MODEL = 'usersApp.CustomUser'
-=======
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
->>>>>>> 51bee0cf41382f408dd2e93e054c6c3acdb3edb9

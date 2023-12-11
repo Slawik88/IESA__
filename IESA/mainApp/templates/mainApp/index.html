@@ -156,26 +156,13 @@
 
     {% block js %}
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-        <!-- Добавим ссылку на Inputmask.js -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
         <!-- Для использования Bootstrap и jQuery -->
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-
-
-
-
-
         <script src="https://cdnjs.cloudflare.com/ajax/libs/imask/6.0.7/imask.min.js"></script>
         <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                var phoneMask = IMask(document.getElementById('floatingInputPhone'), {
-                    mask: '+{38}(000)000-00-00'
-                })
-            })
+        
             document.addEventListener('DOMContentLoaded', function () {
                 const swiper = new Swiper('.swiper', {
                     // Optional parameters
