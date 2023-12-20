@@ -19,14 +19,14 @@ from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
+
 from mainApp.views import home_page_view
-
-
 
 urlpatterns = [
     path('', home_page_view, name='home'),
     path('user/', include('usersApp.urls')),
     path('admin/', admin.site.urls),
+    path('events/', include('eventsApp.urls', namespace='eventsApp')),
     path("i18n/", include("django.conf.urls.i18n")),
 
 
@@ -36,6 +36,7 @@ urlpatterns = [
 )
 urlpatterns += i18n_patterns(
     path('', home_page_view, name='home_page'),
+    path('events/', include('eventsApp.urls', namespace='eventsApp')),
 
 )
 # Only during development

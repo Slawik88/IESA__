@@ -1,0 +1,144 @@
+{% extends 'mainApp/base.html' %}
+
+{% block title %}Event List{% endblock %}
+
+{% block contents %}
+<div class="container mt-4">
+    <h1 class="mb-4">Event List</h1>
+
+    {% for event in events %}
+    <div class="card mb-3">
+        <div class="row g-0">
+            <div class="col-md-6">
+                <div class="card-body">
+                    <h5 class="card-title">{{ event.name }}</h5>
+                    <ul class="list-group list-group-flush">
+                        {% if event.organizer %}
+                        <li class="list-group-item"><strong>Organizer:</strong> {{ event.organizer }}</li>
+                        {% endif %}
+                        {% if event.responsible_person %}
+                        <li class="list-group-item"><strong>Responsible Person:</strong> {{ event.responsible_person }}
+                        </li>
+                        {% endif %}
+                        {% if event.date %}
+                        <li class="list-group-item"><strong>Date:</strong> {{ event.date }}</li>
+                        {% endif %}
+                        {% if event.time %}
+                        <li class="list-group-item"><strong>Time:</strong> {{ event.time }}</li>
+                        {% endif %}
+                        {% if event.location %}
+                        <li class="list-group-item"><strong>Location:</strong> {{ event.location }}</li>
+                        {% endif %}
+                        {% if event.category %}
+                        <li class="list-group-item"><strong>Category:</strong> {{ event.category }}</li>
+                        {% endif %}
+                        {% if event.description %}
+                        <li class="list-group-item"><strong>Description:</strong> {{ event.description }}</li>
+                        {% endif %}
+                        {% if event.items_to_bring %}
+                        <li class="list-group-item"><strong>Items to Bring:</strong> {{ event.items_to_bring }}</li>
+                        {% endif %}
+                        {% if event.participation_cost %}
+                        <li class="list-group-item"><strong>Participation Cost:</strong> ${{ event.participation_cost }}
+                        </li>
+                        {% endif %}
+                    </ul>
+
+                    <h2>Event Participants</h2>
+                    <ul class="list-group">
+                        {% for participant in event.participants.all %}
+                        <li class="list-group-item">{{ participant.first_name }} {{ participant.last_name }}</li>
+                        {% endfor %}
+                    </ul>
+
+                    <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal"
+                            data-bs-target="#registrationModal{{ event.id }}">
+                        Register for Event
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                {% if event.photo %}
+                <img src="{{ event.photo.url }}" class="img-fluid rounded-end" alt="{{ event.name }}">
+                {% else %}
+                <!-- Placeholder image or default image when no photo is available -->
+                <img src="" class="img-fluid rounded-end" alt="{{ event.name }}">
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Registration Modal -->
+    <div class="modal fade" id="registrationModal{{ event.id }}" tabindex="-1" role="dialog"
+         aria-labelledby="registrationModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registrationModalLabel">Event Registration</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    {% with registration_form as form %}
+                    <form method="post"
+                          action="{% if event %}{% url 'eventsApp:register_for_event' event.id %}{% endif %}">
+                        {% csrf_token %}
+
+                        <div class="mb-3">
+                            <label for="id_first_name" class="form-label">First Name</label>
+                            <input type="text" class="form-control {% if form.first_name.errors %}is-invalid{% endif %}"
+                                   id="id_first_name" name="first_name" value="{{ form.first_name.value }}" required>
+                            {% if form.first_name.errors %}
+                            <div class="invalid-feedback">{{ form.first_name.errors.0 }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="id_last_name" class="form-label">Last Name</label>
+                            <input type="text" class="form-control {% if form.last_name.errors %}is-invalid{% endif %}"
+                                   id="id_last_name" name="last_name" value="{{ form.last_name.value }}" required>
+                            {% if form.last_name.errors %}
+                            <div class="invalid-feedback">{{ form.last_name.errors.0 }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="id_email" class="form-label">Email</label>
+                            <input type="email" class="form-control {% if form.email.errors %}is-invalid{% endif %}"
+                                   id="id_email" name="email" value="{{ form.email.value }}" required>
+                            {% if form.email.errors %}
+                            <div class="invalid-feedback">{{ form.email.errors.0 }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="id_phone_number" class="form-label">Phone Number</label>
+                            <input type="text"
+                                   class="form-control {% if form.phone_number.errors %}is-invalid{% endif %}"
+                                   id="id_phone_number" name="phone_number" value="{{ form.phone_number.value }}"
+                                   required>
+                            {% if form.phone_number.errors %}
+                            <div class="invalid-feedback">{{ form.phone_number.errors.0 }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="id_date_of_birth" class="form-label">Date of Birth</label>
+                            <input type="date"
+                                   class="form-control {% if form.date_of_birth.errors %}is-invalid{% endif %}"
+                                   id="id_date_of_birth" name="date_of_birth" value="{{ form.date_of_birth.value }}"
+                                   required>
+                            {% if form.date_of_birth.errors %}
+                            <div class="invalid-feedback">{{ form.date_of_birth.errors.0 }}</div>
+                            {% endif %}
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Register</button>
+                    </form>
+                    {% endwith %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

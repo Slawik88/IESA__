@@ -26,9 +26,14 @@ SECRET_KEY = 'django-insecure-7g5zuo6p0x%s^0e+w&380difkb(85d+r3l(sb2^6367i@s*h%n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
+
+
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -41,6 +46,9 @@ INSTALLED_APPS = [
 
     'usersApp',
     'mainApp',
+    'eventsApp',
+
+
 
 ]
 

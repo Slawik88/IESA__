@@ -99,6 +99,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url "home_page" %}">{% translate "Home" %}</a>
                     </li>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                            aria-expanded="false">{% translate "Courses" %}</a>
@@ -153,13 +154,16 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">{% translate "About Us" %}</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'eventsApp:event_list' %}">{% translate "Events" %}</a>
+                    </li>
                 </ul>
+
                 <form class="d-flex mr-5" role="search">
                     <input class="form-control me-2 focus-ring-danger" type="search" placeholder="Search"
                            aria-label="Search"/>
                     <button class="btn btn-outline-primary" type="submit">Search</button>
                 </form>
-
 
                 <form class="mr-5 ml-5" id="languageForm" action="{% url 'set_language' %}" method="post">{% csrf_token %}
                     <input name="next" type="hidden" value="{{ redirect_to }}">
