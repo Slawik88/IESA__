@@ -33,8 +33,6 @@ ALLOWED_HOSTS = ['*']
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
-
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -43,12 +41,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap5',
+    'modeltranslation',
+
+
 
     'usersApp',
     'mainApp',
     'eventsApp',
-
-
 
 ]
 
@@ -133,8 +132,8 @@ LANGUAGES = [
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
 MODELTRANSLATION_PREPOPULATE_LANGUAGE = 'en'
 MODELTRANSLATION_AUTO_POPULATE = True
-
-
+MODELTRANSLATION_LANGUAGE = ('en', 'de', 'ru', 'uk', 'ar', 'fr')
+MODELTRANSLATION_AUTO_DETECT = True
 
 # Язык по умолчанию
 LANGUAGE_CODE = 'en'
@@ -152,7 +151,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATIC_URL = '/static/'
 
 # Конфигурация медиафайлов
-
 
 
 MEDIA_URL = '/media/'

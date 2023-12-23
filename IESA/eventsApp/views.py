@@ -31,4 +31,5 @@ def register_for_event(request, event_id):
             print(eventsRegistrationForm.errors)  # Add this line to print form errors
 
     # Если форма не прошла валидацию или это GET-запрос, отображаем страницу события с формой
-    return render(request, 'eventsApp/event_list.html', {'event': event, 'eventsRegistrationForm': eventsRegistrationForm})
+    return render(request, 'eventsApp/event_list.html',
+                  {'event': event, 'eventsRegistrationForm': eventsRegistrationForm})
